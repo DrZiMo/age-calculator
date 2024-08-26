@@ -71,13 +71,7 @@ function calculateAge() {
 
 function displayAge() {
     if(!err) {
-        const day = date.getDate();
-        const month = date.getMonth() + 1;
-        const year = date.getFullYear();
-
-        dayNumber.textContent = getDayDifference(day);
-        monthNumber.textContent = getMonthDifference(month);
-        yearNumber.textContent = getYearDifference(year);
+        getDifference();
     }
     else {
         dayNumber.textContent = '--';
@@ -123,35 +117,26 @@ function removeErrors() {
     errMsgY.style.display = 'none';
 }
 
-function getDayDifference(day) {
-    let dayDiff = 0;
-    if (day > dayInput.value) {
-        dayDiff = day - dayInput.value;
+function getDifference() {
+    let today = new Date();
+    let birthDate = new Date(yearInput.value, monthInput.value - 1, dayInput.value);
+  
+    let diffInYears = today.getFullYear() - birthDate.getFullYear();
+    let diffInMonths = today.getMonth() - birthDate.getMonth();
+    let diffInDays = today.getDate() - birthDate.getDate();
+  
+    if (diffInMonths < 0 || (diffInMonths === 0 && diffInDays < 0)) {
+      diffInYears--;
+      diffInMonths += 12;
     }
-    else {
-        dayDiff = dayInput.value - day;
+  
+    if (diffInDays < 0) {
+      let daysInPrevMonth = new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+      diffInDays += daysInPrevMonth;
+      diffInMonths--;
     }
-    return dayDiff;
-}
-
-function getMonthDifference(month) {
-    let monthDiff = 0;
-    if (month > monthInput.value) {
-        monthDiff = month - monthInput.value;
-    }
-    else {
-        monthDiff = monthInput.value - month;
-    }
-    return monthDiff;
-}
-
-function getYearDifference(year) {
-    let yearDiff = 0;
-    if (year > yearInput.value) {
-        yearDiff = year - yearInput.value;
-    }
-    else {
-        yearDiff = yearInput.value - year;
-    }
-    return yearDiff;
-}
+  
+    yearNumber.textContent = diffInYears;
+    monthNumber.textContent = diffInMonths;
+    dayNumber.textContent = diffInDays;
+  }
