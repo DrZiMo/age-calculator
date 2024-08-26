@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/age-calculator.css" />
+
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+
+        <!-- inputs part -->
+        <div class="inputs">
+          <div class="sub-input">
+            <label for="day" id="day-label">Day</label>
+            <input type="number" name="day" id="day" autocomplete="off" placeholder="DD"/>
+            <p id="day-err-msg"></p>
+          </div>
+          <div class="sub-input">
+            <label for="month" id="month-label">Month</label>
+            <input type="number" name="month" id="month" autocomplete="off" placeholder="MM"/>
+            <p id="month-err-msg"></p>
+          </div>
+          <div class="sub-input">
+            <label for="year" id="year-label">Year</label>
+            <input type="number" name="year" id="year" autocomplete="off" placeholder="YYYY"/>
+            <p id="year-err-msg"></p>
+          </div>
+        </div>
+
+        <!-- divider and the button part -->
+        <div class="divider-btn">
+          <div class="divider"></div>
+          <div class="arrow" id="arrow">
+            <img src="assets/images/icon-arrow.svg" alt="icon-arrow">
+          </div>
+        </div>
+
+        <!-- result part -->
+         <div class="result">
+          <div class="result-part">
+            <div class="number" id="year-number">--</div>
+            <div class="date">Years</div>
+          </div>
+          <div class="result-part">
+            <div class="number" id="month-number">--</div>
+            <div class="date">Months</div>
+          </div>
+          <div class="result-part">
+            <div class="number" id="day-number">--</div>
+            <div class="date">days</div>
+          </div>
+         </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

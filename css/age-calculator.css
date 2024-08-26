@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins Bold';
+    src: url('../assets/fonts/Poppins-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins Bold Italic';
+    src: url('../assets/fonts/Poppins-BoldItalic.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins Extra Bold';
+    src: url('../assets/fonts/Poppins-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins Extra Bold Italic';
+    src: url('../assets/fonts/Poppins-ExtraBoldItalic.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins Italic';
+    src: url('../assets/fonts/Poppins-Italic.ttf');
+}
+
+:root {
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(0, 0%, 94%);
+    --light-grey: hsl(0, 0%, 86%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+
+    --ff-regular: 'Poppins', sans-serif;
+    --ff-bold: 'Poppins Bold', sans-serif;
+    --ff-bold-italic: 'Poppins Bold Italic', sans-serif;
+    --ff-extra-bold: 'Poppins Extra Bold', sans-serif;
+    --ff-extra-bold-italic: 'Poppins Bold Italic', sans-serif;
+    --ff-italic: 'Poppins Italic', sans-serif;
+
+    --fw-light: 400;
+    --fw-regular: 700;
+    --fw-bold: 800;
+
+    --fs-400: 0.9rem;
+    --fs-600: 25px;
+    --fs-800: 62px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-grey);
+    font-family: var(--ff-regular);
+}
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.wrapper .container {
+    background-color: var(--white);
+    max-width: 700px;
+    padding: 35px 50px;
+    border-radius: 10px 10px 100px 10px;
+}
+.wrapper .container .inputs {
+    display: flex;
+    gap: 30px;
+    width: 80%;
+}
+
+.wrapper .container .inputs .sub-input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.wrapper .container .inputs .sub-input label {
+    color: var(--smokey-grey);
+    text-transform: uppercase;
+    font-family: var(--ff-bold);
+    font-size: var(--fs-400);
+    letter-spacing: 2px;
+}
+.wrapper .container .inputs .sub-input label.error {
+    color: var(--light-red)
+}
+.wrapper .container .inputs .sub-input input {
+    padding: 10px 15px;
+    font-family: var(--ff-bold);
+    font-size: var(--fs-600);
+    border: 1px solid var(--light-grey);
+    outline: none;
+    border-radius: 5px;
+    transition: 0.2s;
+    width: 100%;
+}
+.wrapper .container .inputs .sub-input input::-webkit-outer-spin-button,
+.wrapper .container .inputs .sub-input input::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+}
+.wrapper .container .inputs .sub-input input.error {
+    border-color: var(--light-red);
+}
+.wrapper .container .inputs .sub-input p {
+    margin: 0;
+    font-size: var(--fs-400);
+    color: var(--light-red);
+    display: none;
+}
+.wrapper .container .inputs .sub-input input:hover,
+.wrapper .container .inputs .sub-input input:focus-visible {
+    border-color: var(--purple);
+}
+
+.wrapper .container .divider-btn {
+    display: grid;
+    grid-template-columns: 1fr 80px;
+    align-items: center;
+}
+.wrapper .container .divider-btn .divider {
+    width: 100%;
+    height: 0.6px;
+    background-color: var(--light-grey);
+}
+.wrapper .container .divider-btn .arrow {
+    width: 80px;
+    height: 80px;
+    background-color: var(--purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+.wrapper .container .divider-btn .arrow:hover,
+.wrapper .container .divider-btn .arrow:focus-visible {
+    background-color: black;
+    cursor: pointer;
+}
+
+.wrapper .container .result {
+    font-family: var(--ff-extra-bold-italic);
+    text-transform: lowercase;
+    font-size: var(--fs-800);
+}
+.wrapper .container .result .result-part {
+    display: flex;
+    gap: 5px;
+}
+.wrapper .container .result .result-part .number {
+    color: var(--purple);
+}
+.wrapper .container .result .result-part .date {
+    font-size: var(--fs-800);
+}
