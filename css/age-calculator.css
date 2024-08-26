@@ -76,6 +76,11 @@ body {
     padding: 35px 50px;
     border-radius: 10px 10px 100px 10px;
 }
+@media (max-width: 750px) {
+    .wrapper .container {
+        padding: 35px 35px;
+    }
+}
 .wrapper .container .inputs {
     display: flex;
     gap: 30px;
@@ -84,6 +89,7 @@ body {
 @media (max-width: 750px) {
     .wrapper .container .inputs {
         width: 100%;
+        gap: 10px;
     }
 }
 .wrapper .container .inputs .sub-input {
@@ -188,6 +194,9 @@ body {
 .wrapper .container .result .result-part .number {
     color: var(--purple);
 }
-.wrapper .container .result .result-part .date {
-    font-size: var(--fs-800);
+
+@media (max-width:750px) {
+    .wrapper .container .result {
+        font-size: 50px;
+    }
 }
